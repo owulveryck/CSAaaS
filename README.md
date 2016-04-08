@@ -72,11 +72,11 @@ Let me explain.
 
 ```shell
 api
- v0
-     Demo
-             POST
-                         active
-                                     config.yaml
+  |--v0
+     |--- Demo
+           |---- POST
+                   |--- active
+                   |--- config.yaml
 ```
 
 When it starts, the `csaPortal` will scan the directories and when an `active` file is found, it adds the path to
@@ -174,7 +174,7 @@ The payload to send when doing a `POST /v0/Demo` would be:
 }
 ```
 
-__Note__ In the yaml file, the needed flag can be changed for manadatory parameters
+__Note__ In the yaml file, the needed flag can be changed for mandatory parameters
 
 ### Generating the YAML files
 There is a helper function to generate the YAML file from a CSA subscription JSON in the `helper` directory.
@@ -220,3 +220,48 @@ In the scripts directory are a bunch of shell helpful to generate new APIs from 
 The API generated is self documented via _swagger_.
 
 Just point your brother to [https://localhost:8080/apidocs/](https://localhost:8080/apidocs/)
+
+
+# Example
+
+Launching the CSAportal:
+
+```shell
+go run csaPortal.go 
+Infos:
+  Debug: false
+  URL: https://0.0.0.0:8080
+  CSA backend: https://localhost:8888/csa
+  2016/04/08 11:11:26 Adding route /v0/Demo with method POST
+  2016/04/08 11:11:26 Adding route to /apidocs/
+```
+
+Then sending a request:
+```
+curl -i -XPOST -d@'{"myfield":"false"}' -k https://localhost:8080/v0/Demo
+Warning: Couldn't read data from file "{"myfield":"false"}", this makes an 
+Warning: empty POST.
+HTTP/1.1 422 status code 422
+Content-Type: application/json; charset=UTF-8
+Date: Fri, 08 Apr 2016 09:21:18 GMT
+Content-Length: 59
+
+{"Offset":0}
+{"ID":"4eeaeae3-9b32-4f97-aee5-6084b2e9a1f5"}
+```
+
+And seeing the result:
+```shell
+  2016/04/08 11:12:54 Sending this to CSA: {
+       "catalogId": "90d00catalogId000",
+       "categoryName": "APPLICATION_SERVERS",
+       "subscriptionName": "Request b0c9b4ca-e8f8-4cb9-9fa3-00be2940e8d0 generated with API",
+       "subscriptionDescription": "Send by API...",
+       "startDate": "2016-04-08T11:12:54.459Z",
+       "endDate": "2017-04-08T11:12:54.459Z",
+       "fields": {
+             "field_402894a349d0b7560149ddaf6fe10156": true
+       },
+       "action": "ORDER"
+  }
+```
