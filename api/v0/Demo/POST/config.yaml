@@ -4,8 +4,13 @@ category:
   name: APPLICATION_SERVERS
 Description: ""
 fields:
+- display_name: TEST
+  id: field_402894a349d0b7560149ddaf6fe10157
+  name: myfield2
+  needed: true
+  value: false
 - display_name: 2 CPU
   id: field_402894a349d0b7560149ddaf6fe10156
   name: myfield
-  value: true
   needed: true
+  value: false

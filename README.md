@@ -239,7 +239,7 @@ Infos:
 
 Then sending a request:
 ```
-curl -i -XPOST -d@'{"myfield":"false"}' -k https://localhost:8080/v0/Demo
+curl -i -XPOST -d'{"myfield":"false"}' -k https://localhost:8080/v0/Demo
 Warning: Couldn't read data from file "{"myfield":"false"}", this makes an 
 Warning: empty POST.
 HTTP/1.1 422 status code 422
@@ -261,8 +261,10 @@ And seeing the result:
        "startDate": "2016-04-08T11:12:54.459Z",
        "endDate": "2017-04-08T11:12:54.459Z",
        "fields": {
-             "field_402894a349d0b7560149ddaf6fe10156": true
+             "field_402894a349d0b7560149ddaf6fe10156": false
        },
        "action": "ORDER"
   }
 ```
+
+We see that the field that had a default value true is now false.
