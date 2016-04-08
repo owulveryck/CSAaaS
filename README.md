@@ -221,6 +221,7 @@ The API generated is self documented via _swagger_.
 
 Just point your brother to [https://localhost:8080/apidocs/](https://localhost:8080/apidocs/)
 
+![Screenshot](https://raw.githubusercontent.com/owulveryck/CSAaaS/master/doc/screenshot_swagger.png)
 
 # Example
 
