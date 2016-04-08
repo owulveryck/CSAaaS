@@ -1,0 +1,11 @@
+id: 402894a349d0b7560149ddaf6fe1234
+catalog_id: 90d00catalogId000
+category:
+  name: APPLICATION_SERVERS
+Description: ""
+fields:
+- display_name: 2 CPU
+  id: field_402894a349d0b7560149ddaf6fe10156
+  name: myfield
+  value: true
+  needed: true

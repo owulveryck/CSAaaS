@@ -1,0 +1,36 @@
+{
+    "id": "402894a349d0b7560149ddaf6fe1234",
+    "name": "REST_Example_ab23453",
+    "displayName": "REST Example",
+    "catalogId": "90d00catalogId000",
+    "category": {
+        "displayName": "Application Servers",
+        "name": "APPLICATION_SERVERS"
+    },
+    "image": "csa/images/library/Service_Design.png",
+    "approvalRequired": false,
+    "publishedDate": "2014-10-04T12:41:54.003Z",
+    "initPrice": {
+        "currency": "USD",
+        "price": 50
+    },
+    "reccuringPrice": {
+        "currency": "USD",
+        "price": 10,
+        "basedOn": "monthly"
+    },
+    "fields":  [
+        {
+            "id": "field_402894a349d0b7560149ddaf6fe10156",
+            "displayName": "2 CPU",
+            "name": "EC9B9-AZE-123",
+            "description": "2 CPU",
+            "visible": true,
+            "value": true,
+            "initPrice": {
+                "currency": "USD",
+                "price": 50
+            }
+        }
+    ]
+}

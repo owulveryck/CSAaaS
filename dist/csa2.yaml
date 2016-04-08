@@ -1,0 +1,101 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Test
+paths:
+  /v0/groups:
+    post:
+      description: ""
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      security:
+      - csa: []
+      responses:
+        "202":
+          description: A request ID
+          schema:
+            $ref: '#/definitions/response'
+        "400":
+          description: Request Malformed or mandatory parameter not present
+          schema: {}
+        "500":
+          description: Unhandled error
+          schema: {}
+        "502":
+          description: CSA backend unavailable
+          schema: {}
+      parameters:
+      - name: The payload
+        in: body
+        description: The payload
+        required: true
+        schema:
+          $ref: '#/definitions/40d723265245bcdb01525f06d37e70a3'
+      tags:
+      - groups
+  /v0/oracle:
+    post:
+      description: Cette offre permet l'installation de binaires Oracle sur une VM
+        linux
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "202":
+          description: A request ID
+          schema:
+            $ref: '#/definitions/response'
+        "400":
+          description: Request Malformed or mandatory parameter not present
+          schema: {}
+        "500":
+          description: Unhandled error
+          schema: {}
+        "502":
+          description: CSA backend unavailable
+          schema: {}
+      parameters:
+      - name: The payload
+        in: body
+        description: The payload
+        required: true
+        schema:
+          $ref: '#/definitions/40d8a5df5258f5a60152d575e19b2a59'
+      tags:
+      - oracle
+definitions:
+  40d8a5df5258f5a60152d575e19b2a59:
+    description: bla
+    properties:
+      step_input_code_MFU:
+        type: string
+        format: ""
+        description: 6) Code MFU
+      step_input_system:
+        type: string
+        format: ""
+        description: 5) OS du serveur cible
+  40d723265245bcdb01525f06d37e70a3:
+    description: bla
+    properties:
+      groupname:
+        type: string
+        format: ""
+        description: 2) Groupe à créer
+      targetHosts:
+        type: string
+        format: ""
+        description: 1) Hostname
+  response:
+    description: Reponse
+    properties:
+      id:
+        type: string
+securityDefinitions:
+  csa:
+    type: apiKey
+    in: header
+    name: X-Auth-Token
