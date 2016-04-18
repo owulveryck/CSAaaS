@@ -1,21 +1,12 @@
-#!/bin/ksh
+#!/bin/sh
 
-URL=$1
-
-if [ "_$TOKEN" == "_" ]
-then
-    echo "No token provided"
-    exit
-fi
-
-unset https_proxy
-curl -s \
+curl -v \
     -H "Accept: application/json" \
-    -H "X-Auth-Token: $TOKEN" \
+    -H "X-Auth-Token: $CSATOKEN" \
     -d'{"name": null, "approval": "ALL", "category": null}' \
     -k \
     -H "Content-Type: application/json" \
-    --user idmTransportUser:idmTransportUser \
+    --user idmTransportUser:cloud \
     -XPOST \
-    $URL/csa/api/mpp/mpp-offering/filter | jsonformat
+    $CSASCHEME://$CSAFQDN:$CSAPORT$CSABASEDIR/api/mpp/mpp-offering/filter 
 

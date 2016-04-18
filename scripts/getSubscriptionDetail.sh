@@ -11,10 +11,10 @@ eval $(echo $URL | sed 's|\(http.://.*/csa\).*catalog/\(.*\)/category/\(.*\)/ser
 unset https_proxy
 curl -s \
     -H "Accept: application/json" \
-    -H "X-Auth-Token: $TOKEN" \
+    -H "X-Auth-Token: $CSATOKEN" \
     -k \
     -H "Content-Type: application/json" \
-    --user idmTransportUser:idmTransportUser \
+    --user idmTransportUser:cloud \
     -XGET \
     "$BASEURL/api/mpp/mpp-offering/$ID?catalogId=$CATALOGID&category=$CATEGORY"
 
