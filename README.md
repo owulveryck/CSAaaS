@@ -219,7 +219,7 @@ In the scripts directory are a bunch of shell helpful to generate new APIs from 
 
 The API generated is self documented via _swagger_.
 
-Just point your brother to [https://localhost:8080/apidocs/](https://localhost:8080/apidocs/)
+Just point your browser to [https://localhost:8080/apidocs/](https://localhost:8080/apidocs/)
 
 ![Screenshot](https://raw.githubusercontent.com/owulveryck/CSAaaS/master/doc/screenshot_swagger.png)
 
