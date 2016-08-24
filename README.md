@@ -240,15 +240,12 @@ Infos:
 Then sending a request:
 ```
 curl -i -XPOST -d'{"myfield":"false"}' -k https://localhost:8080/v0/Demo
-Warning: Couldn't read data from file "{"myfield":"false"}", this makes an 
-Warning: empty POST.
-HTTP/1.1 422 status code 422
+HTTP/1.1 201 Created
 Content-Type: application/json; charset=UTF-8
-Date: Fri, 08 Apr 2016 09:21:18 GMT
-Content-Length: 59
+Date: Wed, 24 Aug 2016 20:07:03 GMT
+Content-Length: 46
 
-{"Offset":0}
-{"ID":"4eeaeae3-9b32-4f97-aee5-6084b2e9a1f5"}
+{"ID":"c6cdf2f0-97ef-4801-9708-e96609989d2e"}
 ```
 
 And seeing the result:
